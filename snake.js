@@ -70,4 +70,14 @@ function Snake() {
             this.y = playground.height;
     }
 
+    this.checkIfCollides = function () {
+        for (let i = 0; i < this.tail.length; i++) {
+            if (this.x == this.tail[i].x && this.y == this.tail[i].y) {
+                this.size = 0;
+                this.tail = [];
+                return true;
+            }
+        }
+    }
+
 }
